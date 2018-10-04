@@ -7,7 +7,7 @@ bool binarySearchIterative(int list[], int first, int end, int item){
 	int middle;
 
 	while(first <= end){
-		middle = (first + end)/2;
+		middle = first + ((end-first)/2) //to avoid overflow of int.
 		if(list[middle] == item) {
 			return true;
 		}
@@ -22,7 +22,7 @@ bool binarySearchIterative(int list[], int first, int end, int item){
 
 bool binarySearchRecursive(int list[], int first, int end, int item){
 
-	int middle = (first + end)/2;
+	int middle = first + ((end - first)/2); // to avoid overflow of int type
 
 	if(list[middle] == item){
 		return true;
